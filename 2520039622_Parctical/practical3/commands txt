@@ -1,0 +1,45 @@
+divyasaisomana@Divyas-MacBook-Neo ~ % nano pratical3.c
+divyasaisomana@Divyas-MacBook-Neo ~ % gcc pratical3.c
+divyasaisomana@Divyas-MacBook-Neo ~ % ./a.out
+Parent process
+PID: 1577
+Child process
+PID: 1578
+Child process completed
+divyasaisomana@Divyas-MacBook-Neo ~ % ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+4 S  1000     982     976  0  80   0 -  1567 do_wai pts/0    00:00:00 bash
+0 R  1000    1594     982  0  80   0 -  1799 -      pts/0    00:00:00 ps
+divyasaisomana@Divyas-MacBook-Neo ~ % top
+top - 14:03:22 up  1:22,  1 user,  load average: 0.00, 0.01, 0.00
+Tasks:  25 total,   1 running,  24 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7762.6 total,   7033.2 free,    565.2 used,    317.6 buff/cache
+MiB Swap:   2048.0 total,   2048.0 free,      0.0 used.   7197.4 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   24284  15428  11620 S   0.0   0.2   0:01.11 systemd
+      2 root      20   0    3180   2204   2072 S   0.0   0.0   0:00.02 init-syste+
+      6 root      20   0    3180   2044   1940 S   0.0   0.0   0:00.00 init
+     52 root      19  -1   50424  16752  15448 S   0.0   0.2   0:00.44 systemd-jo+
+     84 systemd+  20   0   22416  14500  12004 S   0.0   0.2   0:00.23 systemd-re+
+     92 root      20   0   35368  12292   9200 S   0.0   0.2   0:02.81 systemd-ud+
+    149 root      20   0    2888   1948   1820 S   0.0   0.0   0:00.06 chronyd-st+
+    150 root      20   0    4472   3144   2900 S   0.0   0.0   0:00.01 cron
+    151 message+  20   0    8792   5432   4736 S   0.0   0.1   0:00.19 dbus-daemon
+    155 root      20   0   44096  29828  14688 S   0.0   0.4   0:00.25 networkd-d+
+    162 root      20   0   18440   9396   8148 S   0.0   0.1   0:00.20 systemd-lo+
+    204 syslog    20   0  220548   5916   4620 S   0.0   0.1   0:00.14 rsyslogd
+    264 _chrony   20   0   20536   7968   7112 S   0.0   0.1   0:00.15 chronyd
+    271 _chrony   20   0   12096   2408   1760 S   0.0   0.0   0:00.00 chronyd
+    276 root      20   0  123460  32772  18156 S   0.0   0.4   0:00.16 unattended+
+    278 root      20   0    5492   2768   2584 S   0.0   0.0   0:00.01 agetty
+    310 root      20   0    8644   5536   4696 S   0.0   0.1   0:00.02 login
+    375 somana    20   0   22340  13500  10884 S   0.0   0.2   0:00.17 systemd
+    378 somana    20   0   22920   4092   2088 S   0.0   0.1   0:00.00 (sd-pam)
+    405 somana    20   0    6136   5428   3864 S   0.0   0.1   0:00.02 bash
+    975 root      20   0    3188   1120    980 S   0.0   0.0   0:00.00 SessionLea+
+    976 root      20   0    3204   1260   1108 S   0.0   0.0   0:00.14 Relay(982)
+    982 somana    20   0    6268   5540   3864 S   0.0   0.1   0:00.23 bash
+   1282 polkitd   20   0  306444   8540   7724 S   0.0   0.1   0:00.16 polkitd
+   1604 somana    20   0    8184   6056   3940 R   0.0   0.1   0:00.00 top
