@@ -1,0 +1,5 @@
+divyasaisomana@Divyas-MacBook-Neo ~ % nano sample.txt
+divyasaisomana@Divyas-MacBook-Neo ~ % nano practical2.c
+divyasaisomana@Divyas-MacBook-Neo ~ % gcc practical2.c
+divyasaisomana@Divyas-MacBook-Neo ~ % ./a.out
+File copied successfully.
