@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main()
+{
+    int source, destination;
+    char buffer[1024];
+    ssize_t bytesRead, bytesWritten;
+
+    source = open("source.txt", O_RDONLY);
+
+    if (source < 0)
+    {
+        perror("Error opening source file");
+        return 1;
+    }
+
+    destination = open("destination.txt",
+                      O_WRONLY | O_CREAT | O_TRUNC,
+                      0644);
+
+    if (destination < 0)
+    {
+        perror("Error creating destination file");
+        close(source);
+        return 1;
+    }
+
+    while ((bytesRead = read(source, buffer, sizeof(buffer))) > 0)
+    {
+        bytesWritten = write(destination, buffer, bytesRead);
+
+        if (bytesWritten != bytesRead)
+        {
+            perror("Error writing file");
+            close(source);
+            close(destination);
+            return 1;
+        }
+    }
+
+    close(source);
+    close(destination);
+
+    printf("File copied successfully.\n");
+
+    return 0;
+}
+
