@@ -1,0 +1,4 @@
+myshell> You entered: hello
+myshell> You entered: ls
+myshell> You entered: test
+myshell> Shell exiting...

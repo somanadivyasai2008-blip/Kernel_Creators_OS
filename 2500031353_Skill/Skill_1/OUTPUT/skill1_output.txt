@@ -1,0 +1,6 @@
+Makefile
+skill1
+skill1.c
+Skill-1: Process Demonstration
+Parent PID: 1642
+Parent: Child completed
