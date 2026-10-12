@@ -1,0 +1,117 @@
+ayush@DELL:~$ ./a.out
+Enter a Linux command: pwd
+
+Parent Process
+Parent PID: 529
+Child PID: 530
+
+Child Process
+Child PID: 530
+Parent PID: 529
+/home/ayush
+Child process completed
+ayush@DELL:~$ ls
+ 1.c                filecopy       os-lab         practical3.c   process_lab   server_to_client  'sigint.c*.save'   signit.c       src        zombie.c
+ a.out              filename.txt   practical      prctical2.c    prog.c        shm1.c             sign.c           'signit.c*'     type.c
+ bin                include        practical1.c   pro.c          server        sigint             signi.c           signit.h       waite.c
+ client_to_server   malloc.c       practical2.c   process        server.c      sigint.c           signis.c          signit.h.gch   waitex.c
+ayush@DELL:~$ uname
+Linux
+ayush@DELL:~$ lsblk
+NAME MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda    8:0    0 356.9M  1 disk
+sdb    8:16   0 159.4M  1 disk
+sdc    8:32   0     1G  0 disk [SWAP]
+sdd    8:48   0     1T  0 disk /mnt/wslg/distro
+                               /
+ayush@DELL:~$ lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             39 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      12
+  On-line CPU(s) list:       0-11
+Vendor ID:                   GenuineIntel
+  Model name:                12th Gen Intel(R) Core(TM) i5-1235U
+    CPU family:              6
+    Model:                   154
+    Thread(s) per core:      2
+    Core(s) per socket:      6
+    Socket(s):               1
+    Stepping:                4
+    BogoMIPS:                4992.00
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdts
+                             cp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid
+                             sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs i
+                             bpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflush
+                             opt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_
+                             clear serialize ibt flush_l1d arch_capabilities
+Virtualization features:
+  Virtualization:            VT-x
+  Hypervisor vendor:         Microsoft
+  Virtualization type:       full
+Caches (sum of all):
+  L1d:                       288 KiB (6 instances)
+  L1i:                       192 KiB (6 instances)
+  L2:                        7.5 MiB (6 instances)
+  L3:                        12 MiB (1 instance)
+NUMA:
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0-11
+Vulnerabilities:
+  Gather data sampling:      Not affected
+  Ghostwrite:                Not affected
+  Indirect target selection: Not affected
+  Itlb multihit:             Not affected
+  L1tf:                      Not affected
+  Mds:                       Not affected
+  Meltdown:                  Not affected
+  Mmio stale data:           Not affected
+  Old microcode:             Not affected
+  Reg file data sampling:    Mitigation; Clear Register File
+  Retbleed:                  Mitigation; Enhanced IBRS
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+ayush@DELL:~$ ps
+    PID TTY          TIME CMD
+    320 pts/0    00:00:00 bash
+    583 pts/0    00:00:00 ps
+ayush@DELL:~$ top
+top - 03:16:11 up 12 min,  1 user,  load average: 0.02, 0.04, 0.00
+Tasks:  24 total,   1 running,  23 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3758.6 total,   3233.3 free,    439.2 used,    161.7 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   3319.5 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   24380  15440  11636 S   0.0   0.4   0:01.17 systemd
+      2 root      20   0    3180   2208   2072 S   0.0   0.1   0:00.02 init-systemd(Ub
+      7 root      20   0    3180   2048   1940 S   0.0   0.1   0:00.00 init
+     50 root      19  -1   50428  16796  15508 S   0.0   0.4   0:00.25 systemd-journal
+     82 systemd+  20   0   22416  14516  12020 S   0.0   0.4   0:00.08 systemd-resolve
+     88 root      20   0   35304  12196   9172 S   0.0   0.3   0:00.30 systemd-udevd
+    139 root      20   0    2888   2012   1884 S   0.0   0.1   0:00.06 chronyd-starter
+    140 root      20   0    4472   3144   2892 S   0.0   0.1   0:00.01 cron
+    141 message+  20   0    8820   5396   4728 S   0.0   0.1   0:00.09 dbus-daemon
+    147 root      20   0   44096  29832  14692 S   0.0   0.8   0:00.64 networkd-dispat
+    154 root      20   0   18440   9340   8092 S   0.0   0.2   0:00.14 systemd-logind
+    174 syslog    20   0  220548   5856   4564 S   0.0   0.2   0:00.13 rsyslogd
+    201 root      20   0  123460  32828  18216 S   0.0   0.9   0:00.54 unattended-upgr
+    226 _chrony   20   0   23880  11368   7188 S   0.0   0.3   0:00.21 chronyd
+    236 _chrony   20   0   12096   2452   1808 S   0.0   0.1   0:00.01 chronyd
+    240 root      20   0    5492   2780   2596 S   0.0   0.1   0:00.01 agetty
+    313 root      20   0    3184   1112    980 S   0.0   0.0   0:00.00 SessionLeader
+    315 root      20   0    3200   1252   1108 S   0.0   0.0   0:00.02 Relay(320)
+    320 ayush     20   0    6268   5664   3992 S   0.0   0.1   0:00.06 bash
+    322 root      20   0    8644   5608   4768 S   0.0   0.1   0:00.01 login
+    378 ayush     20   0   22348  13252  10972 S   0.0   0.3   0:00.14 systemd
+    382 ayush     20   0   22920   4128   2124 S   0.0   0.1   0:00.00 (sd-pam)
+    411 ayush     20   0    6136   5484   3928 S   0.0   0.1   0:00.03 bash
+    593 ayush     20   0    8172   6012   3888 R   0.0   0.2   0:00.17 top
+
